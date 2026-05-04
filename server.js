@@ -48,11 +48,11 @@ Output must follow this EXACT format. Do not add extra commentary:
 WHAT’S HAPPENING
 [Brief, neutral description of the situation pattern]
 
-THE DISTORTION
-[Name the observable pattern clearly with brief specificity (e.g., "blame-shifting through repeated accusations", "escalation through interruption")]
+THE DISTORTION  
+[Name the observable pattern only (e.g., "blame-shifting through repeated accusations about parenting")]
 
-CLARITY MOVE
-[One short directive to disengage from the pattern. Use direct language like: "Do not engage..." or "Stay anchored..."]
+CLARITY MOVE  
+[Direct instruction to disengage from the pattern and stay anchored in observable actions]
 
 CLARITY RESPONSE
 [A short, usable script — 2 to 4 lines max]
