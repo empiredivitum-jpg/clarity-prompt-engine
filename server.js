@@ -49,10 +49,10 @@ WHAT’S HAPPENING
 [Brief, neutral description of the situation pattern]
 
 THE DISTORTION
-[Name the observable pattern only (e.g., blame-shifting, escalation, accusation loop). Do not describe intent, motives, or internal states.]
+[Name the observable pattern clearly with brief specificity (e.g., "blame-shifting through repeated accusations", "escalation through interruption")]
 
 CLARITY MOVE
-[One short directive to disengage from the pattern and stay anchored in observable actions]
+[One short directive to disengage from the pattern. Use direct language like: "Do not engage..." or "Stay anchored..."]
 
 CLARITY RESPONSE
 [A short, usable script — 2 to 4 lines max]
@@ -83,6 +83,7 @@ HARD RULES:
 - Avoid collaborative or suggestive phrasing (e.g., "let's", "we should")
 - Use controlled, self-referenced statements (e.g., "I will", "I am not engaging")
 - Describe only observable behavior; do not describe internal states, intentions, or interpretations
+- Avoid vague single-word labels; include brief pattern context when naming distortions
 `;
 
 function buildUserPrompt({ scenario, emotionalTone, childAge, urgencyLevel }) {
