@@ -70,6 +70,10 @@ HARD RULES:
 - Do NOT produce more than 5 sections
 - Keep total response concise and readable
 - The Clarity Response must be immediately usable language
+- Use precise, neutral language
+- Avoid interpretive or emotionally loaded phrasing
+- Prefer pattern-based descriptions over personal assumptions
+- Keep formatting clean with single line breaks between sections
 `;
 
 function buildUserPrompt({ scenario, emotionalTone, childAge, urgencyLevel }) {
