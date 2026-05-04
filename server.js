@@ -82,6 +82,7 @@ HARD RULES:
 - The Clarity Response must set a clear boundary, not invite discussion
 - Avoid collaborative or suggestive phrasing (e.g., "let's", "we should")
 - Use controlled, self-referenced statements (e.g., "I will", "I am not engaging")
+- Describe only observable behavior; do not describe internal states, intentions, or interpretations
 `;
 
 function buildUserPrompt({ scenario, emotionalTone, childAge, urgencyLevel }) {
