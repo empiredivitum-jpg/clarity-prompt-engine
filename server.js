@@ -79,6 +79,9 @@ HARD RULES:
 - Do not assume intent or motives
 - Keep Clarity Response direct, firm, and boundary-based
 - Avoid vague phrases like "let’s focus on what’s best"
+- The Clarity Response must set a clear boundary, not invite discussion
+- Avoid collaborative or suggestive phrasing (e.g., "let's", "we should")
+- Use controlled, self-referenced statements (e.g., "I will", "I am not engaging")
 `;
 
 function buildUserPrompt({ scenario, emotionalTone, childAge, urgencyLevel }) {
