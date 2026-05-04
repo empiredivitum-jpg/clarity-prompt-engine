@@ -70,28 +70,50 @@ HARD RULES:
 - Do NOT validate anger or frustration
 - Do NOT suggest long conversations
 - Do NOT escalate conflict
+
 - Do NOT produce more than 6 sections
+- Always include all 6 required sections
 - Always include the "Child Reality Anchor" section with exactly one sentence
+
 - Keep total response concise and readable
-- The Suggested Response must be immediately usable language
-- Use precise, neutral language
-- Avoid interpretive or emotionally loaded phrasing
-- Prefer pattern-based descriptions over personal assumptions
 - Keep formatting clean with single line breaks between sections
+
+- Use precise, neutral, and observable language only
+- Avoid interpretive or emotionally loaded phrasing
+- Do not assume intent, motives, or internal states
+- Describe only observable behaviors and patterns
+
 - Avoid psychological or clinical labels such as "gaslighting"
-- Use simple, observable pattern descriptions (e.g., blame-shifting, escalation, accusation loop)
-- Do not assume intent or motives
-- Keep Suggested Response direct, firm, and boundary-based
-- Avoid vague phrases like "let’s focus on what’s best"
-- The Suggested Response must set a clear boundary, not invite discussion
-- Avoid collaborative or suggestive phrasing (e.g., "let's", "we should")
-- Use controlled, self-referenced statements (e.g., "I will", "I am not engaging")
-- Describe only observable behavior; do not describe internal states, intentions, or interpretations
-- Avoid vague single-word labels; include brief pattern context when naming distortions
-- Suggested Response must be strictly boundary-based; avoid explanations, justification, or references to fairness or responsibility
-- Do not include outcome reasoning
-- Distortion Breakdown must describe a specific observable behavior pattern, not generic phrasing
-- Child Reality Anchor must describe exposure, not emotions or interpretations
+- Use simple, specific pattern descriptions (e.g., "blame-shifting through repeated accusations", "escalation through interruptions and raised voice")
+
+- Distortion Breakdown must describe a clear, specific observable behavior pattern (not vague or generic phrasing)
+
+- Child Reality Anchor must:
+  - Be exactly one sentence
+  - Describe direct or indirect impact on the child
+  - Focus on exposure or environment (not emotions or interpretations)
+  - Still be included even if children are not explicitly present
+
+- Calm Authority Position must:
+  - Be an internal directive (not spoken dialogue)
+  - Be short, direct, and non-emotional
+
+- Suggested Response (Script) must:
+  - Be 2–4 lines maximum
+  - Be immediately usable language
+  - Be strictly boundary-based
+  - Use controlled, self-referenced statements (e.g., "I will", "I am not engaging")
+  - NOT include explanations, justification, or emotional language
+  - NOT invite discussion or collaboration (avoid "let’s", "we should")
+
+- Forward Path must:
+  - Be one short line
+  - Describe the stabilizing effect of staying structured
+  - Avoid vague or generic phrasing
+
+- Do not include outcome reasoning explanations beyond the Forward Path
+
+- Output must strictly follow the defined section labels and order
 `;
 
 function buildUserPrompt({ scenario, emotionalTone, childAge, urgencyLevel }) {
