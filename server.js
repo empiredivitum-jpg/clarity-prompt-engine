@@ -74,6 +74,11 @@ HARD RULES:
 - Avoid interpretive or emotionally loaded phrasing
 - Prefer pattern-based descriptions over personal assumptions
 - Keep formatting clean with single line breaks between sections
+- Avoid psychological or clinical labels such as "gaslighting"
+- Use simple, observable pattern descriptions (e.g., blame-shifting, escalation, accusation loop)
+- Do not assume intent or motives
+- Keep Clarity Response direct, firm, and boundary-based
+- Avoid vague phrases like "let’s focus on what’s best"
 `;
 
 function buildUserPrompt({ scenario, emotionalTone, childAge, urgencyLevel }) {
