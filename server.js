@@ -52,7 +52,7 @@ THE DISTORTION
 [Name the observable pattern only (e.g., blame-shifting, escalation, accusation loop). Do not describe intent, motives, or internal states.]
 
 CLARITY MOVE
-[One short directive on how to orient yourself internally]
+[One short directive to disengage from the pattern and stay anchored in observable actions]
 
 CLARITY RESPONSE
 [A short, usable script — 2 to 4 lines max]
