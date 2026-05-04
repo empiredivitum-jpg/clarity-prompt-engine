@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import OpenAI from "openai";
+import rateLimit from "express-rate-limit";
 
 dotenv.config();
 
@@ -9,6 +10,40 @@ const app = express();
 
 app.use(cors());
 app.use(express.json({ limit: "1mb" }));
+// ===============================
+// BASIC RATE LIMITING (Keith requirement)
+// ===============================
+const limiter = rateLimit({
+  windowMs: 60 * 1000, // 1 minute
+  max: 20, // max 20 requests per minute per IP
+  standardHeaders: true,
+  legacyHeaders: false,
+});
+
+app.use(limiter);
+
+// ===============================
+// SIMPLE API KEY AUTH (Keith requirement)
+// ===============================
+app.use((req, res, next) => {
+  const apiKey = req.headers["authorization"];
+
+  if (!process.env.API_KEY) {
+    return res.status(500).json({
+      success: false,
+      error: "Server missing API key configuration"
+    });
+  }
+
+  if (!apiKey || apiKey !== `Bearer ${process.env.API_KEY}`) {
+    return res.status(401).json({
+      success: false,
+      error: "Unauthorized request"
+    });
+  }
+
+  next();
+});
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY
