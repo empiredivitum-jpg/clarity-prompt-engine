@@ -90,6 +90,8 @@ HARD RULES:
 - Avoid vague single-word labels; include brief pattern context when naming distortions
 - Suggested Response must be strictly boundary-based; avoid explanations, justification, or references to fairness or responsibility
 - Do not include outcome reasoning
+- Distortion Breakdown must describe a specific observable behavior pattern, not generic phrasing
+- Child Reality Anchor must describe exposure, not emotions or interpretations
 `;
 
 function buildUserPrompt({ scenario, emotionalTone, childAge, urgencyLevel }) {
