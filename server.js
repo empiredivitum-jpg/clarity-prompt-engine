@@ -17,7 +17,7 @@ const openai = new OpenAI({
 const PORT = process.env.PORT || 3000;
 const MODEL = process.env.CLARITY_MODEL || "gpt-4o-mini";
 
-const SYSTEM_PROMPT = `const SYSTEM_PROMPT = `
+const SYSTEM_PROMPT = `
 You are the Clarity System — an AI designed to provide structured, grounded responses for high-conflict interpersonal situations, especially in co-parenting dynamics.
 
 Your role is not to provide therapy, emotional validation, or open-ended advice.
@@ -31,16 +31,21 @@ Your role is to:
 
 Core principles:
 - Structured response, not reaction
-- We don't escalate. We direct.
+- We don’t escalate. We direct.
 - This moment is not about the other adult — it is about maintaining clarity and stability, especially where children are involved
 - Avoid emotional language, blame, or argument
 - Avoid long explanations
 
-Tone: Calm, Direct, Grounded, Non-reactive, Authoritative without aggression
+Tone:
+- Calm
+- Direct
+- Grounded
+- Non-reactive
+- Authoritative without aggression
 
 Output must follow this EXACT format. Do not add extra commentary:
 
-WHAT'S HAPPENING
+WHAT’S HAPPENING
 [Brief, neutral description of the situation pattern]
 
 THE DISTORTION
@@ -67,51 +72,13 @@ HARD RULES:
 - The Clarity Response must be immediately usable language
 `;
 
-function buildUserPrompt({ name, email, scenario, childAge, emotionalTone, urgencyLevel }) {
+function buildUserPrompt({ scenario, emotionalTone, childAge, urgencyLevel }) {
   return `
 Situation: ${scenario}
 Emotional State: ${emotionalTone || "Not provided"}
 Children Involved: ${childAge || "Not provided"}
 Is this recurring: ${urgencyLevel || "Not provided"}
 `;
-}
-
-{
-  "pattern_identified": "",
-  "distortion_breakdown": "",
-  "child_reality_anchor": "",
-  "calm_authority_position": "",
-  "suggested_response_script": "",
-  "forward_path": "",
-  "disclaimer": ""
-}
-`;
-}
-
-function toHtml(data) {
-  return `
-    <h2>1. Pattern Identified</h2>
-    <p>${data.pattern_identified || ""}</p>
-
-    <h2>2. Distortion Breakdown</h2>
-    <p>${data.distortion_breakdown || ""}</p>
-
-    <h2>3. Child Reality Anchor</h2>
-    <p>${data.child_reality_anchor || ""}</p>
-
-    <h2>4. Calm Authority Position</h2>
-    <p>${data.calm_authority_position || ""}</p>
-
-    <h2>5. Suggested Response Script</h2>
-    <blockquote>${data.suggested_response_script || ""}</blockquote>
-
-    <h2>6. Forward Path</h2>
-    <p>${data.forward_path || ""}</p>
-
-    <hr />
-
-    <p><em>${data.disclaimer || "This is educational support, not therapy, legal advice, or medical advice."}</em></p>
-  `;
 }
 
 app.get("/", (req, res) => {
@@ -124,8 +91,6 @@ app.get("/", (req, res) => {
 app.post("/clarity-response", async (req, res) => {
   try {
     const {
-      name,
-      email,
       scenario,
       childAge,
       emotionalTone,
@@ -142,7 +107,6 @@ app.post("/clarity-response", async (req, res) => {
     const completion = await openai.chat.completions.create({
       model: MODEL,
       temperature: 0.45,
-      response_format: { type: "json_object" },
       messages: [
         {
           role: "system",
@@ -151,8 +115,6 @@ app.post("/clarity-response", async (req, res) => {
         {
           role: "user",
           content: buildUserPrompt({
-            name,
-            email,
             scenario,
             childAge,
             emotionalTone,
@@ -168,17 +130,10 @@ app.post("/clarity-response", async (req, res) => {
       throw new Error("No response returned from OpenAI.");
     }
 
-    const parsed = JSON.parse(raw);
-    const html = toHtml(parsed);
-
     return res.json({
       success: true,
-      clarity_response: parsed,
-      clarity_response_html: html,
-      tags: [
-        "ClarityPrompt_User",
-        "Scenario_Submitted"
-      ]
+      clarity_response: raw,
+      tags: ["ClarityPrompt_User", "Scenario_Submitted"]
     });
 
   } catch (error) {
