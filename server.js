@@ -66,22 +66,15 @@ HARD RULES:
 - Keep total response concise and readable
 - The Clarity Response must be immediately usable language
 `;
-`;
 
 function buildUserPrompt({ name, email, scenario, childAge, emotionalTone, urgencyLevel }) {
   return `
-User Name: ${name || "Not provided"}
-User Email: ${email || "Not provided"}
-Child Age: ${childAge || "Not provided"}
-Emotional Tone: ${emotionalTone || "Not provided"}
-Urgency Level: ${urgencyLevel || "Not provided"}
-
-Scenario:
-${scenario}
-
-Generate a Clarity Response using the full framework.
-
-Return the response as JSON with these exact keys:
+Situation: ${scenario}
+Emotional State: ${emotionalTone || "Not provided"}
+Children Involved: ${childAge || "Not provided"}
+Is this recurring: ${urgencyLevel || "Not provided"}
+`;
+}
 
 {
   "pattern_identified": "",
