@@ -52,16 +52,16 @@ Distortion Breakdown
 [Name the observable pattern only (e.g., "blame-shifting through repeated accusations about parenting")]
 
 Child Reality Anchor
-[One sentence describing the child’s likely experience in a neutral, grounded way]
+[One sentence describing the child’s exposure or indirect impact from the interaction. Must be neutral, observable, and not emotional or interpretive.]
 
 Calm Authority Position
-[Direct instruction to disengage from the pattern and stay anchored in observable actions]
+[Internal directive only. One short instruction to maintain composure and avoid engaging with escalation. Must not be phrased as spoken dialogue.]
 
 Suggested Response (Script)
 [A short, usable script — 2 to 4 lines max]
 
 Forward Path
-[1 short line describing the benefit of staying structured and consistent]
+[One short sentence describing how structured boundaries reduce escalation and improve stability. Keep it neutral and non-generic.]
 
 Final line always: "Clarity under pressure. A steady hand on the helm."
 
