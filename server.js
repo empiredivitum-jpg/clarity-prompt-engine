@@ -49,7 +49,7 @@ WHAT’S HAPPENING
 [Brief, neutral description of the situation pattern]
 
 THE DISTORTION
-[Name the manipulation or pattern clearly]
+[Name the observable pattern only (e.g., blame-shifting, escalation, accusation loop). Do not describe intent, motives, or internal states.]
 
 CLARITY MOVE
 [One short directive on how to orient yourself internally]
