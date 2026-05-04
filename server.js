@@ -1,15 +1,3 @@
-function authenticate(req, res, next) {
-  const apiKey = req.headers["authorization"];
-
-  if (!apiKey || apiKey !== `Bearer ${process.env.API_KEY}`) {
-    return res.status(401).json({
-      success: false,
-      error: "Unauthorized request"
-    });
-  }
-
-  next();
-}
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
@@ -37,6 +25,7 @@ app.use(limiter);
 // ===============================
 // SIMPLE API KEY AUTH (Keith requirement)
 // ===============================
+app.use((req, res, next) => {
   const apiKey = req.headers["authorization"];
 
   if (!process.env.API_KEY) {
@@ -179,7 +168,7 @@ app.get("/", (req, res) => {
   });
 });
 
-app.post("/clarity-response", authenticate, async (req, res) => {
+app.post("/clarity-response", async (req, res) => {
   try {
     const {
       scenario,
@@ -240,3 +229,4 @@ app.post("/clarity-response", authenticate, async (req, res) => {
 app.listen(PORT, () => {
   console.log(`Clarity Prompt Engine running on port ${PORT}`);
 });
+
