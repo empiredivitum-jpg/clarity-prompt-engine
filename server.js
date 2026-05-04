@@ -84,6 +84,8 @@ HARD RULES:
 - Use controlled, self-referenced statements (e.g., "I will", "I am not engaging")
 - Describe only observable behavior; do not describe internal states, intentions, or interpretations
 - Avoid vague single-word labels; include brief pattern context when naming distortions
+- CLARITY RESPONSE must be strictly boundary-based; avoid explanations, justification, or references to fairness or responsibility
+- Do not include outcome reasoning (e.g., "this works because")
 `;
 
 function buildUserPrompt({ scenario, emotionalTone, childAge, urgencyLevel }) {
