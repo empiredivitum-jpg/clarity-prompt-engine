@@ -190,6 +190,6 @@ app.post("/clarity-response", async (req, res) => {
   }
 });
 
-aapp.listen(PORT, "0.0.0.0", () => {
+app.listen(PORT, () => {
   console.log(`Clarity Prompt Engine running on port ${PORT}`);
 });
