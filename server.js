@@ -132,7 +132,7 @@ app.get("/", (req, res) => {
   });
 });
 
-app.post("/clarity-response", authenticate, async (req, res) => {
+app.post("/clarity-response", async (req, res) => {
   try {
     const {
       scenario,
