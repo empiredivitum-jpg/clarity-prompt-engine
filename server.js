@@ -47,7 +47,7 @@ app.use((req, res, next) => {
 });
 
 const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY=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
+  apiKey: process.env.OPENAI_API_KEY
 });
 
 const PORT = process.env.PORT || 3000;
