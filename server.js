@@ -35,7 +35,7 @@ app.use((req, res, next) => {
     });
   }
 
-if (!apiKey || apiKey !== `Bearer ${process.env.API_KEY}`)
+  if (!apiKey || apiKey !== `Bearer ${process.env.API_KEY}`) {
     return res.status(401).json({
       success: false,
       error: "Unauthorized request"
@@ -44,7 +44,6 @@ if (!apiKey || apiKey !== `Bearer ${process.env.API_KEY}`)
 
   next();
 });
-
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY
 });
