@@ -228,5 +228,7 @@ app.post("/clarity-response", async (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`Clarity Prompt Engine running on port ${PORT}`);
+  - Do not include outcome reasoning
+`;
 });
 
