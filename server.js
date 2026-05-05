@@ -139,7 +139,7 @@ HARD RULES:
   - Use controlled, self-referenced statements (e.g., "I will", "I am not engaging")
   - NOT include explanations, justification, or emotional language
   - NOT invite discussion or collaboration (avoid "let’s", "we should")
-
+  
 - Forward Path must:
   - Be one short line
   - Describe the stabilizing effect of staying structured
