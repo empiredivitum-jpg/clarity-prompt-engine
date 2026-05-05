@@ -35,7 +35,7 @@ app.use((req, res, next) => {
     });
   }
 
-  if (!apiKey || apiKey !== `clarity_secure_2026_key_91 ${process.env.API_KEY}`) 
+  if (!apiKey || apiKey !== Bearer ${process.env.API_KEY}`) 
   {
     return res.status(401).json({
       success: false,
