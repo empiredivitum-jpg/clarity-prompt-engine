@@ -157,8 +157,6 @@ app.post(
   }
 );
 
-const PORT = process.env.PORT || 3000;
-
 console.log("Server starting...");
 
 app.listen(PORT, () => {
