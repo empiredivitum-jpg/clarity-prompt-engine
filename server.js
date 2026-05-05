@@ -24,9 +24,8 @@ app.use(limiter);
 
 // ===============================
 // SIMPLE API KEY AUTH (Keith requirement)
-// ===============================
 app.use((req, res, next) => {
-  const apiKey = req.headers["authorization"];
+  const apiKey = req.headers.authorization;
 
   if (!process.env.API_KEY) {
     return res.status(500).json({
@@ -35,7 +34,9 @@ app.use((req, res, next) => {
     });
   }
 
-  if (!apiKey || apiKey !== `Bearer ${process.env.API_KEY}`) {
+  const expectedKey = `Bearer ${process.env.API_KEY}`;
+
+  if (!apiKey || apiKey !== expectedKey) {
     return res.status(401).json({
       success: false,
       error: "Unauthorized request"
@@ -43,6 +44,7 @@ app.use((req, res, next) => {
   }
 
   next();
+});
 });
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY
